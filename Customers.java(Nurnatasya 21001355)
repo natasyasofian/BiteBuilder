@@ -1,0 +1,49 @@
+/*
+ * Author: Natasya Sofian
+ * Date: 2 June 2024
+ */
+
+
+
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Customers {
+    private List<Customer> customers;
+
+    public Customers() {
+        customers = new ArrayList<>();
+    }
+
+    public void addCustomer(Customer customer) {
+        customers.add(customer);
+    }
+
+    public void removeCustomer(Customer customer) {
+        customers.remove(customer);
+    }
+
+    public void printCustomers() {
+        for (Customer customer : customers) {
+            System.out.println("Name: " + customer.getName());
+            System.out.println("Address: " + customer.getAddress());
+            System.out.println("ID: " + customer.getId());
+            customer.getBurgerOrder().printBurgerOrder();
+        }
+    }
+
+    public List<Customer> getCustomers() {
+        return customers;
+    }
+
+    public Customer findCustomer(int id) {
+        for (Customer customer : customers) {
+            if (customer.getId() == id) {
+                return customer;
+            }
+        }
+        return null;
+    }
+}

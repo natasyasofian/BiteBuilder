@@ -1,0 +1,40 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class BurgerOrder {
+    private List<Burger> burgers;
+    private String status;
+
+    public BurgerOrder() {
+        burgers = new ArrayList<>();
+        status = "Not Delivered";
+    }
+
+    public void addBurger(Burger burger) {
+        burgers.add(burger);
+    }
+
+    public void removeBurger(Burger burger) {
+        burgers.remove(burger);
+    }
+
+    public void printBurgerOrder() {
+        for (Burger burger : burgers) {
+            burger.printBurger();
+        }
+        System.out.println("Status: " + status);
+    }
+
+    public Burger findBurger(String name) {
+        for (Burger burger : burgers) {
+            if (burger.getName().equals(name)) {
+                return burger;
+            }
+        }
+        return null;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+}

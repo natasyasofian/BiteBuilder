@@ -1,3 +1,12 @@
+/*
+ * Author: Natasya Sofian
+ * Date: 2 June 2024
+ */
+
+
+
+
+
 import java.util.Scanner;
 import java.util.List;
 import java.util.ArrayList;

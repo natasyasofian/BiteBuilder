@@ -1,0 +1,22 @@
+public class Ingredient {
+    private String name;
+    private double amount;
+    private double costPerUnit;
+    private String supplier;
+    private int currentStock;
+
+    public Ingredient(String name, double amount, double costPerUnit, String supplier, int currentStock) {
+        this.name = name;
+        this.amount = amount;
+        this.costPerUnit = costPerUnit;
+        this.supplier = supplier;
+        this.currentStock = currentStock;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getAmount() {
+        return amount;
+    }

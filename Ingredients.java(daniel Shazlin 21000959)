@@ -1,0 +1,37 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class Ingredients {
+    private List<Ingredient> ingredients;
+
+    public Ingredients() {
+        ingredients = new ArrayList<>();
+    }
+
+    public void addIngredient(Ingredient ingredient) {
+        ingredients.add(ingredient);
+    }
+
+    public void removeIngredient(Ingredient ingredient) {
+        ingredients.remove(ingredient);
+    }
+
+    public void printIngredients() {
+        for (Ingredient ingredient : ingredients) {
+            System.out.println("Name: " + ingredient.getName());
+            System.out.println("Amount: " + ingredient.getAmount());
+            System.out.println("Cost Per Unit: " + ingredient.getCostPerUnit());
+            System.out.println("Supplier: " + ingredient.getSupplier());
+            System.out.println("Current Stock: " + ingredient.getCurrentStock());
+        }
+    }
+
+    public Ingredient findIngredient(String name) {
+        for (Ingredient ingredient : ingredients) {
+            if (ingredient.getName().equals(name)) {
+                return ingredient;
+            }
+        }
+        return null;
+    }
+}

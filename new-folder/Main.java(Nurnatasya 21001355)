@@ -1,0 +1,22 @@
+public class Main {
+    public static void main(String[] args) {
+        Customer customer1 = new Customer(new Name("Natasya", "Sofian"), new Address("No 18", "Taman Dahlia", "Temerloh", "28000"));
+        Customer customer2 = new Customer(new Name("Daniel", "Shazlin"), new Address("2357", "Jalan Lingkaran Aman", "Seri Iskandar", "36000"));
+
+        Restaurant restaurant = new Restaurant();
+        restaurant.addCustomer(customer1);
+        restaurant.addCustomer(customer2);
+
+        BurgerOrder burgerOrder1 = new BurgerOrder("Beef Burger", 2, 10.0);
+        BurgerOrder burgerOrder2 = new BurgerOrder("Chicken Burger", 3, 12.0);
+
+        customer1.addBurgerOrder(burgerOrder1);
+        customer2.addBurgerOrder(burgerOrder2);
+
+        restaurant.addBurgerOrder(burgerOrder1);
+        restaurant.addBurgerOrder(burgerOrder2);
+
+        System.out.println("Top Customer: " + restaurant.getTopCustomer());
+        System.out.println("Total Revenue: " + restaurant.getTotalRevenue());
+    }
+}

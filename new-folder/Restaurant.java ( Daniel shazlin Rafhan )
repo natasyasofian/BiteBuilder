@@ -1,0 +1,48 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class Restaurant {
+    private List<Customer> customers;
+    private List<BurgerOrder> burgerOrders;
+
+    public Restaurant() {
+        this.customers = new ArrayList<>();
+        this.burgerOrders = new ArrayList<>();
+    }
+
+    public List<Customer> getCustomers() {
+        return customers;
+    }
+
+    public void addCustomer(Customer customer) {
+        this.customers.add(customer);
+    }
+
+    public List<BurgerOrder> getBurgerOrders() {
+        return burgerOrders;
+    }
+
+    public void addBurgerOrder(BurgerOrder burgerOrder) {
+        this.burgerOrders.add(burgerOrder);
+    }
+
+    public Customer getTopCustomer() {
+        Customer topCustomer = null;
+        int maxOrders = 0;
+        for (Customer customer : customers) {
+            if (customer.getBurgerOrders().size() > maxOrders) {
+                maxOrders = customer.getBurgerOrders().size();
+                topCustomer = customer;
+            }
+        }
+        return topCustomer;
+    }
+
+    public double getTotalRevenue() {
+        double totalRevenue = 0;
+        for (BurgerOrder burgerOrder : burgerOrders) {
+            totalRevenue += burgerOrder.getPrice() * burgerOrder.getQuantity();
+        }
+        return totalRevenue;
+    }
+}
